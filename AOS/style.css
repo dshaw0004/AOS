@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+:root {
+	--header-img: url("./IMG/Img1.jpeg");
+	--header-fcolor: #bfa1ff;
+
+	--feature-img: url("./IMG/Img2.jpeg");
+	--feature-bgcolor: rgba(253 219 185 /0.35);
+	--download-img: url("./IMG/Img4.jpeg");
+	--price-img: url("./IMG/Img5.jpeg");
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* outline: 2px solid red; */
+}
+
+@media screen and (min-width: 825px) {
+	:root {
+		--header-img: url("./IMG/ImgB1.jpg");
+		--download-img: url("./IMG/ImgB3.jpg");
+		--price-img: url("./IMG/ImgBB4.jpg");
+	}
+}
+@media screen and (min-width: 1400px) {
+	:root {
+		--header-img: url("./IMG/ImgBB1.jpg");
+		--header-fcolor: #ffdf77;
+		--feature-img: url("./IMG/ImgBB2.jpg");
+		--feature-bgcolor: rgba(153 119 85 /0.35);
+		--download-img: url("./IMG/ImgBB3.jpg");
+	}
+}
+
+/*---------- Header ----------*/
+
+.header {
+	background-color: rgba(120, 2, 18, 0.75);
+	height: 100vh;
+	width: 100vw;
+	background-image: var(--header-img);
+	background-size: cover;
+	overflow: hidden;
+}
+
+h1 {
+	font-family: "Dancing Script", cursive;
+	font-size: 7.5rem;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%) skewY(-25deg);
+	color: var(--header-fcolor);
+}
+
+center {
+	text-shadow: 0 0 4px #000000, 1px 2px 8px #77dfff;
+}
+.container-fluid {
+	padding: 0;
+	margin: 0;
+}
+/*---------- Main -----------*/
+
+section {
+	height: 100vh;
+	outline: 2px solid #105910;
+}
+.section-top {
+	height: 25%;
+	margin-inline: 2.9rem;
+}
+
+.features {
+	background-color: rgba(255 75 100 /0.6);
+	background-image: var(--feature-img);
+	color: white;
+}
+
+.features > p {
+	margin-inline: 1em;
+	font-size: x-large;
+}
+
+.container {
+	display: grid;
+	height: 75%;
+	place-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.feature {
+	outline: 1px solid rgba(253 219 185 /0.5);
+	width: 70%;
+	height: 20%;
+	text-align: center;
+	padding: 1ch;
+	background-color: var(--feature-bgcolor);
+	position: relative;
+	color: #fddbb9;
+	text-shadow: 1px 2px 4px #f77330;
+}
+
+.img {
+	position: absolute;
+	inset: 40% 1ch 1ch 1ch;
+	background-color: #efefef;
+	background-image: url("./IMG/Img3.jpeg");
+	background-size: contain;
+	margin-top: 1ch;
+}
+
+/*:::::::::::::::::::::::::::::::::::::
+:::::::::::::: download :::::::::::::::
+:::::::::::::::::::::::::::::::::::::*/
+
+.apps {
+	background-color: skyblue;
+	background-image: var(--download-img);
+}
+
+.apps > h2 {
+	color: #dead;
+}
+
+.app {
+	padding: 1ch;
+	width: 75%;
+	height: 40%;
+	outline: 1px solid rgba(185 219 253 /0.5);
+	background-color: rgba(185 219 253 /0.35);
+	text-align: center;
+	color: #faded0;
+}
+
+.download {
+	position: relative;
+	isolation: isolate;
+	color: antiquewhite;
+	border-radius: 0.5em;
+}
+
+.download::after,
+.download::before {
+	content: " ";
+	position: absolute;
+	border-radius: 0.5em;
+}
+
+.download::after {
+	background-image: linear-gradient(
+		108deg,
+		rgba(205 40 230 /0.9),
+		rgba(55 80 180 /0.9),
+		rgba(0 170 250 /0.9)
+	);
+	inset: 0;
+	z-index: -1;
+}
+
+.download::before {
+	background-image: linear-gradient(
+		108deg,
+		rgba(225 40 250 /0.65),
+		rgba(20 40 250 /0.65)
+	);
+	inset: -0.25ch;
+	z-index: -2;
+}
+
+/*:::::::::::::::::::::::::::::::::::::
+::::::::::::::: Pricing :::::::::::::::
+:::::::::::::::::::::::::::::::::::::*/
+
+.pricing {
+	background-image: var(--price-img);
+}
+
+.price-box {
+	/*width: 69%;*/
+	background-color: rgba(246, 75, 7, 0.75);
+	outline: 1px solid rgba(175 130 37.5 /0.5);
+	color: cyan;
+	text-align: center;
+}
+
+.price {
+	width: 50%;
+}
+
+/*---------- footer ----------*/
+
+.footer {
+	width: 100vw;
+	background-color: rgba(4 4 4 /1);
+	text-align: center;
+	color: #faded0;
+}
+
+/*—–—–—–—–—–—– margintop –—–—–—–—–—–—*/
+
+.features-box,
+.feature,
+.download,
+.apps > * + *,
+.price-box + .price-box {
+	margin-top: 2ch;
+}
+
+/*___________________________________*/
+
+/*—–—–—–—–—–— margin auto —–—–—–—–—–—*/
+
+.feature,
+.download,
+.app,
+.price-box,
+.pricing {
+	margin-inline: auto;
+}
+
+/*___________________________________*/
+
+/*--------- background image --------*/
+
+.features,
+.apps,
+.pricing {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*-----------------------------------*/
+
+h2 {
+	padding-top: 0.75ch;
+	text-align: center;
+}
+
+/*•••••••••••••••••••••••••••••••••••••
+•••••••••••••• Animatons ••••••••••••••
+•••••••••••••••••••••••••••••••••••••*/
+
+.js-scroll.scrolled {
+	opacity: 1;
+}
+
+.js-scroll {
+	opacity: 0;
+	transition: opacity 1500ms;
+}
