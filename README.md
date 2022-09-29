@@ -1,2 +1,4 @@
-# web-projects
-some of my web projects
+# My Web Projects
+
+
+Some of my practice projects on website development and webapp development 
